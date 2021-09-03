@@ -17,10 +17,6 @@
   "contributes": {
     "commands": [
       {
-        "command": "cursor.helloWorld",
-        "title": "Hello World"
-      },
-      {
         "command": "cursor.cursor",
         "title": "cursor title"
       }
@@ -29,9 +25,17 @@
       {
         "command": "cursor.cursor",
         "key": "",
-        "when": "editorFocus"
+        "when": "editorTextFocus"
       }
-    ]
+    ],
+    "menus": {
+      "editor/context": [
+        {
+          "command": "cursor.cursor",
+          "group": "6_cursor@100"
+        }
+      ]
+    }
   },
   "scripts": {
     "vscode:prepublish": "npm run package",
