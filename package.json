@@ -1,5 +1,6 @@
 {
   "name": "cursor",
+  "publisher": "cursor",
   "displayName": "cursor",
   "description": "hover file description",
   "version": "0.0.1",
@@ -18,6 +19,17 @@
       {
         "command": "cursor.helloWorld",
         "title": "Hello World"
+      },
+      {
+        "command": "cursor.cursor",
+        "title": "cursor title"
+      }
+    ],
+    "keybindings":[
+      {
+        "command": "cursor.cursor",
+        "key": "",
+        "when": "editorFocus"
       }
     ]
   },
