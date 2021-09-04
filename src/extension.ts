@@ -13,7 +13,7 @@ let getPath = (args: any) => {
 }
 
 class SampleHoverProvider {
-	provideHover(document: any, position: any, token: any) {
+	provideHover(document: vscode.TextDocument, position: vscode.Position, token: vscode.CancellationToken) {
 		console.log("hovering!!");
 		let wordRange = document.getWordRangeAtPosition(position);
 		if (wordRange) {
@@ -27,7 +27,8 @@ class SampleHoverProvider {
 }
 
 class SampleHoverProvider2 {
-	provideHover(document: any, position: any, token: any) {
+	provideHover(document: vscode.TextDocument, position: vscode.Position, token: vscode.CancellationToken) {
+		console.log("hovering!!");
 		let wordRange = document.getWordRangeAtPosition(position, /[a-zA-Z0-9_.\[\]]+/);
         if (wordRange === undefined) return Promise.reject("no word here");
 
@@ -65,7 +66,7 @@ export function activate(context: vscode.ExtensionContext) {
 	/*   hover   */
 	// context.subscriptions.push(vscode.languages.registerHoverProvider('cursor.hover', new SampleHoverProvider));
 	context.subscriptions.push(vscode.languages.registerHoverProvider('cursor.hover', new SampleHoverProvider2));
-	context.subscriptions.push(vscode.languages.registerHoverProvider({scheme: 'file', language: 'ts'}, new SampleHoverProvider2));
+	context.subscriptions.push(vscode.languages.registerHoverProvider("*", new SampleHoverProvider2));
 }
 
 // this method is called when your extension is deactivated

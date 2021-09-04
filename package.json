@@ -13,7 +13,7 @@
   "activationEvents": [
     "onCommand:cursor.helloWorld",
     "onCommand:cursor.cursor",
-    "onCommand:cursor.hover"
+    "*"
   ],
   "main": "./dist/extension.js",
   "contributes": {
