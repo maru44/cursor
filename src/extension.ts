@@ -18,17 +18,27 @@ export function activate(context: vscode.ExtensionContext) {
 	// This line of code will only be executed once when your extension is activated
 	console.log('Congratulations, your extension "cursor" is now active!');
 
-	let disposable = vscode.commands.registerCommand('cursor', (...args) => {
+	let disposable = vscode.commands.registerCommand('cursor.cursor', (...args) => {
 		var fullPath = getPath(args);
 		console.log(args);
 		console.log(typeof args);
 		var extName = path.extname(fullPath);
         var fileName = path.basename(fullPath, extName);
-		vscode.window.setStatusBarMessage(fileName, 2000);
+		// vscode.window.setStatusBarMessage(fileName, 2000);
+		Promise.resolve(new vscode.Hover("aaaaaaa"));
 	});
 
 	context.subscriptions.push(disposable);
-	
+
+	/*   sample   */
+
+	disposable = vscode.commands.registerCommand('cursor.helloWorld', () => {
+		// The code you place here will be executed every time your command is executed
+		// Display a message box to the user
+		vscode.window.showInformationMessage('Hello World from cursor!');
+	});
+
+	context.subscriptions.push(disposable);
 }
 
 // this method is called when your extension is deactivated

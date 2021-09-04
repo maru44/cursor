@@ -1,6 +1,6 @@
 {
   "name": "cursor",
-  "publisher": "cursor",
+  "publisher": "maru44",
   "displayName": "cursor",
   "description": "hover file description",
   "version": "0.0.1",
@@ -11,25 +11,26 @@
     "Other"
   ],
   "activationEvents": [
-    "onCommand:cursor.helloWorld"
+    "onCommand:cursor.helloWorld",
+    "onCommand:cursor.cursor"
   ],
   "main": "./dist/extension.js",
   "contributes": {
     "commands": [
       {
         "command": "cursor.cursor",
-        "title": "cursor title"
+        "title": "Cursor"
       }
     ],
     "keybindings":[
       {
         "command": "cursor.cursor",
-        "key": "",
+        "key": "ctrl+alt+f",
         "when": "editorTextFocus"
       }
     ],
     "menus": {
-      "editor/context": [
+      "editor/title/context": [
         {
           "command": "cursor.cursor",
           "group": "6_cursor@100"
