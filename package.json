@@ -12,7 +12,7 @@
   ],
   "activationEvents": [
     "onCommand:cursor.helloWorld",
-    "onCommand:cursor.cursor",
+    "onCommand:cursor.explorer",
     "*"
   ],
   "main": "./dist/extension.js",
@@ -21,6 +21,10 @@
       {
         "command": "cursor.cursor",
         "title": "Cursor"
+      },
+      {
+        "command": "cursor.explorer",
+        "title": "Cursor Exp"
       }
     ],
     "keybindings":[
@@ -28,6 +32,10 @@
         "command": "cursor.cursor",
         "key": "ctrl+alt+f",
         "when": "editorTextFocus"
+      },
+      {
+        "command": "cusor.explorer",
+        "when": "activeViewlet == 'workbench.view.explorer'"
       }
     ],
     "menus": {

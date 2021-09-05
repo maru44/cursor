@@ -9,21 +9,8 @@ let getPath = (args: any) => {
 		path = args[0].fsPath;
 	}
 	if (!path) path = vscode.window.activeTextEditor?.document.fileName;
+	vscode.window.registerFileDecorationProvider
 	return path;
-}
-
-class SampleHoverProvider {
-	provideHover(document: vscode.TextDocument, position: vscode.Position, token: vscode.CancellationToken) {
-		console.log("hovering!!");
-		let wordRange = document.getWordRangeAtPosition(position);
-		if (wordRange) {
-			let text = new vscode.MarkdownString("aaaaaaa");
-			if (!text) {
-				return Promise.reject("unmatched");
-			}
-			return Promise.resolve(new vscode.Hover(text));
-		}
-	}
 }
 
 class SampleHoverProvider2 {
@@ -51,7 +38,6 @@ export function activate(context: vscode.ExtensionContext) {
 		// Promise.resolve(new vscode.Hover(fileName));
 		console.log(fullPath);
 	});
-
 	context.subscriptions.push(disposable);
 
 	/*   sample   */
@@ -60,12 +46,22 @@ export function activate(context: vscode.ExtensionContext) {
 		// Display a message box to the user
 		vscode.window.showInformationMessage('Hello World from cursor!');
 	});
+	context.subscriptions.push(disposable);
 
+	// clause when
+	disposable = vscode.commands.registerCommand('cursor.explorer', (...args) => {
+		console.log("explorer");
+		var fullPath = getPath(args);
+		var extName = path.extname(fullPath);
+        var fileName = path.basename(fullPath, extName);
+		// vscode.window.setStatusBarMessage(fileName, 2000);
+		// Promise.resolve(new vscode.Hover(fileName));
+		console.log(fullPath);
+	});
 	context.subscriptions.push(disposable);
 
 	/*   hover   */
 	// context.subscriptions.push(vscode.languages.registerHoverProvider('cursor.hover', new SampleHoverProvider));
-	context.subscriptions.push(vscode.languages.registerHoverProvider('cursor.hover', new SampleHoverProvider2));
 	context.subscriptions.push(vscode.languages.registerHoverProvider("*", new SampleHoverProvider2));
 }
 
