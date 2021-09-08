@@ -7,7 +7,7 @@ export const activeFilename = () => {
 
 const setHover = async () => {
     try {
-        const res = await getConfig();
+        const res = getConfig();
         console.log(res);
     } catch (error) {
         console.error(error);

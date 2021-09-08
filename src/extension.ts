@@ -2,6 +2,7 @@
 // Import the module and reference it with the alias vscode in your code below
 import path = require('path');
 import * as vscode from 'vscode';
+import { register } from './commands';
 
 let getPath = (args: any) => {
 	let path = null;
@@ -72,6 +73,8 @@ export function activate(context: vscode.ExtensionContext) {
 	// context.subscriptions.push(vscode.languages.registerHoverProvider('cursor.hover', new SampleHoverProvider));
 	context.subscriptions.push(vscode.languages.registerHoverProvider("*", new SampleHoverProvider2));
 	// context.subscriptions.push(vscode.languages.registerHoverProvider("*", new SampleHoverProvider3));
+
+	register();
 }
 
 // this method is called when your extension is deactivated

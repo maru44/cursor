@@ -25,6 +25,11 @@
       {
         "command": "cursor.explorer",
         "title": "Cursor Exp"
+      },
+      {
+        "command": "cursor.activeFilename",
+        "title": "%command.activeFilename%",
+        "enablement": "!isWeb"
       }
     ],
     "keybindings":[
