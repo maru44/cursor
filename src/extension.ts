@@ -24,6 +24,14 @@ class SampleHoverProvider2 {
 	}
 }
 
+class SampleHoverProvider3 {
+	provideHover(side: vscode.TreeItem, position: vscode.Position) {
+		// console.log("tree hov");
+		console.log(side.tooltip);
+		return Promise.resolve(new vscode.Hover("hover!!!"))
+	}
+}
+
 export function activate(context: vscode.ExtensionContext) {
 	
 	// Use the console to output diagnostic information (console.log) and errors (console.error)
@@ -63,6 +71,7 @@ export function activate(context: vscode.ExtensionContext) {
 	/*   hover   */
 	// context.subscriptions.push(vscode.languages.registerHoverProvider('cursor.hover', new SampleHoverProvider));
 	context.subscriptions.push(vscode.languages.registerHoverProvider("*", new SampleHoverProvider2));
+	// context.subscriptions.push(vscode.languages.registerHoverProvider("*", new SampleHoverProvider3));
 }
 
 // this method is called when your extension is deactivated
