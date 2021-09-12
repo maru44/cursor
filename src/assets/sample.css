@@ -1,0 +1,26 @@
+/* 
+<div class="monaco-list-row" role="treeitem" data-index="13" data-last-element="false" aria-setsize="6" aria-posinset="5" id="list_id_1_13" aria-selected="false" aria-label="s3handler.go" aria-level="4" draggable="true" style="top: 286px; height: 22px; line-height: 22px;">
+  <div class="monaco-tl-row">
+    <div class="monaco-tl-indent" style="width: 16px;">
+      <div class="indent-guide" style="width: 8px"></div>
+      <div class="indent-guide active" style="width: 8px"></div>
+    </div>
+    <div class="monaco-tl-twistie" style="padding-left: 24px;"></div>
+    <div class="monaco-tl-contents">
+      <div class="monaco-icon-label file-icon s3handler.go-name-file-icon go-ext-file-icon ext-file-icon go-lang-file-icon explorer-item" style="display: flex;">
+        <div class="monaco-icon-label-container" title="maru44/animar/internal/pkg/infrastructure/s3handler.go">
+          <span class="monaco-icon-name-container">  <===== js & css to here
+            <a class="label-name">
+              <span class="monaco-highlighted-label">
+                <span>s3handler.go</span>
+              </span>
+            </a>
+          </span>
+          <span class="monaco-icon-description-container">
+          </span>
+</div></div></div></div>
+*/
+
+.monaco-icon-name-container {
+    color: #f00;
+}

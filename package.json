@@ -21,26 +21,13 @@
       {
         "command": "cursor.cursor",
         "title": "Cursor"
-      },
-      {
-        "command": "cursor.explorer",
-        "title": "Cursor Exp"
-      },
-      {
-        "command": "cursor.activeFilename",
-        "title": "%command.activeFilename%",
-        "enablement": "!isWeb"
       }
     ],
-    "keybindings":[
+    "keybindings": [
       {
         "command": "cursor.cursor",
         "key": "ctrl+alt+f",
         "when": "editorFocus"
-      },
-      {
-        "command": "cusor.explorer",
-        "when": "activeViewlet == 'workbench.view.explorer'"
       }
     ],
     "menus": {
@@ -52,6 +39,9 @@
       ]
     }
   },
+  "vscode_custom_css.imports": [
+      "./src/assets/sample.css"
+  ],
   "scripts": {
     "vscode:prepublish": "npm run package",
     "compile": "webpack",
@@ -78,5 +68,9 @@
     "vscode-test": "^1.5.2",
     "webpack": "^5.38.1",
     "webpack-cli": "^4.7.0"
+  },
+  "dependencies": {
+    "uuid": "^8.3.2",
+    "vscode-custom-css": "github:be5invis/vscode-custom-css"
   }
 }
