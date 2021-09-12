@@ -40,7 +40,7 @@
     }
   },
   "vscode_custom_css.imports": [
-      "./src/assets/sample.css"
+    "./src/assets/sample.css"
   ],
   "scripts": {
     "vscode:prepublish": "npm run package",
@@ -72,5 +72,8 @@
   "dependencies": {
     "uuid": "^8.3.2",
     "vscode-custom-css": "github:be5invis/vscode-custom-css"
-  }
+  },
+  "extensionDependencies": [
+    "be5invis.vscode-custom-css"
+  ]
 }
